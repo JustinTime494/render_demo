@@ -27,6 +27,7 @@ fig = px.choropleth(
 
 # Initialize Dash app
 app = dash.Dash(__name__)
+app = app.server
 
 app.layout = html.Div([
     html.H1("FIFA World Cup Dashboard", style={"textAlign": "center"}),
@@ -71,6 +72,6 @@ def update_year(year):
     return f"In {year}, {row['Winner']} won the World Cup, defeating {row['Runner-up']}."
 
 
-app.server
+
 if __name__ == "__main__":
     app.run(debug=True)
